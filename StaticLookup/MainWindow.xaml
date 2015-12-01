@@ -12,6 +12,8 @@
             <TextBlock FontSize="18" Margin="10" TextWrapping="Wrap">Try adding a City - won't add duplicates</TextBlock>
             <TextBox Name="tbkCity" FontSize="22" Margin="10"></TextBox>
             <Button Name="btnAddCity" Margin="10" FontFamily="Arial" FontSize="22" Click="btnAddCity_Click" IsDefault="True">Add City</Button>
+            <ComboBox Name="cbxCities" Margin="10" FontSize="18" SelectionChanged="cbxCities_SelectionChanged" DisplayMemberPath="Name"></ComboBox>
+            <TextBlock Name="tbkPop" FontSize="18" HorizontalAlignment="Center"></TextBlock>
         </StackPanel>
     </DockPanel>
 </Window>

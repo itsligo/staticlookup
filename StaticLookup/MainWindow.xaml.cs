@@ -23,6 +23,8 @@ namespace StaticLookup
         {
             InitializeComponent();
             lbxCities.ItemsSource = DataStore.Cities;   // wire up the listbox
+            cbxCities.ItemsSource = DataStore.Cities;
+            cbxCities.SelectedIndex = (DataStore.Cities.Count>0)?1:0;
         }
 
         private void btnAddCity_Click(object sender, RoutedEventArgs e)
@@ -31,6 +33,13 @@ namespace StaticLookup
             City _newCity = new City { Name = _city, Pop = rnd.Next(10000000) };
             // add to the collection if not already present
             DataStore.AddIfNotThere(_newCity);
+        }
+
+        private void cbxCities_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            City selCity = (City)((ComboBox)sender).SelectedItem;
+            //City selCity = (City)cbxCities.SelectedItem;
+            tbkPop.Text = selCity.Pop.ToString("N0");
         }
     }   // end class
 
