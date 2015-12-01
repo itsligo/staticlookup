@@ -16,23 +16,19 @@ using System.Windows.Shapes;
 
 namespace StaticLookup
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
-        
+        Random rnd = new Random(System.Environment.TickCount);
         public MainWindow()
         {
             InitializeComponent();
-            lbxCities.ItemsSource = DataStore.Cities;
+            lbxCities.ItemsSource = DataStore.Cities;   // wire up the listbox
         }
 
         private void btnAddCity_Click(object sender, RoutedEventArgs e)
         {
-            // read from textbox for data in
-            string _city = tbkCity.Text;
-            City _newCity = new City { Name = _city, Pop = 400000 };
+            string _city = tbkCity.Text;    // read from textbox for data in
+            City _newCity = new City { Name = _city, Pop = rnd.Next(10000000) };
             // add to the collection if not already present
             DataStore.AddIfNotThere(_newCity);
         }
@@ -40,23 +36,48 @@ namespace StaticLookup
 
     public class DataStore
     {
-        // collection of cities
+        // collection of cities with property initialisation
         private static ObservableCollection<City> cities = new ObservableCollection<City>()
         { new City { Name="Paris", Pop=7000000 }, new City {Name="London", Pop=12000000 } };
+        // public property to permit access to the 'database' of cities
         public static ObservableCollection<City> Cities { get { return cities; } set { cities = value; } }
 
+        // public method to add to the database if not already there
         public static void AddIfNotThere(City _city)
         {
-            // check if _city alredy here in datastore
+            //containsCheck(_city);   // won't work (easily) aside from String (see below)
+            //simplestCheck(_city);   // simple but cumbersome
+
+            #region BEST SOLUTION - use LINQ to iterate through collection detecting if there or not
+            if (!(cities.Any(cty => cty.Name == _city.Name))) cities.Add(_city);
+            #endregion
+        }
+
+        #region Contains won't work as you would expect when comparing City objects. By default it will compare the object memory address rather than the name and/or pop of the City. You can implement extra code (i.e. City:IEquatable<City>) to handle this but it's just easier to use LINQ above. I'll leave Contains here for now so you can see that it doesn't work.            
+        private static void containsCheck(City _city)
+        {
+            if (!cities.Contains(_city))
+            {
+                cities.Add(_city);
+            }
+        }
+        #endregion
+
+        #region SIMPLEST SOLUTION - check if _city alredy here in datastore by iterating through collection with foreach and setting bool if found. Adding City is determined by that bool
+        private static void simplestCheck(City _city)
+        {
+            bool foundCity = false;
             foreach (City cty in cities)
             {
-                if (_city.Name == cty.Name) cities.Add(_city);
+                if (_city.Name == cty.Name)
+                {
+                    foundCity = true;
+                    break;
+                }
             }
-            //if (!cities.Contains(_city))
-            //{
-            //    cities.Add(_city);
-            //}
+            if (!foundCity) cities.Add(_city);
         }
+        #endregion
     }
 
     public class City
@@ -65,5 +86,9 @@ namespace StaticLookup
         public string Name { get { return _name; } set { _name = value; } }
         private long _pop;
         public long Pop { get { return _pop; } set { _pop= value; } }
+        public override string ToString()
+        {
+            return String.Format("{0} [pop: {1:N0}]",_name,_pop);
+        }
     }
-}      // ns
+}      // end namespace

@@ -7,10 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <DockPanel Background="Azure">
-        <ListBox FontSize="20" DockPanel.Dock="Left" Name="lbxCities" MinWidth="200" Margin="10"></ListBox>
+        <ListBox FontSize="18" DockPanel.Dock="Left" Name="lbxCities" MinWidth="200" Margin="10"></ListBox>
         <StackPanel DockPanel.Dock="Right" Background="Aquamarine" Margin="20">
+            <TextBlock FontSize="18" Margin="10" TextWrapping="Wrap">Try adding a City - won't add duplicates</TextBlock>
             <TextBox Name="tbkCity" FontSize="22" Margin="10"></TextBox>
-            <Button Name="btnAddCity" Margin="10" FontFamily="Arial" FontSize="22" Click="btnAddCity_Click">Add City</Button>
+            <Button Name="btnAddCity" Margin="10" FontFamily="Arial" FontSize="22" Click="btnAddCity_Click" IsDefault="True">Add City</Button>
         </StackPanel>
     </DockPanel>
 </Window>
