@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Staticlookup by itsligo</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Staticlookup</h1>
+        <p>Using Static for lookup values</p>
+
+        <p class="view"><a href="https://github.com/itsligo/staticlookup">View the Project on GitHub <small>itsligo/staticlookup</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/itsligo/staticlookup/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/itsligo/staticlookup/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/itsligo/staticlookup">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h2>
+<a id="using-static-collections" class="anchor" href="#using-static-collections" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using static collections</h2>
+
+<p><img src="img.gif" alt="Screenshot"></p>
+
+<p>The code is thoroughly commented so look to those inline explanations.
+The general purpose here is to allow the user to add new <strong>Cities</strong> to the collection. Only those <strong>Cities</strong> not already in the collection are added.
+How the program decides whether the <strong>City</strong> is already in the collection is important here.</p>
+
+<p>In an earlier version, we used <strong>String</strong> for holding each City (i.e. just the name of the <strong>City</strong>) which meant we could use the <strong>.Contains()</strong> member of the <strong>List&lt;T&gt;</strong> class to see if the <strong>City</strong> were present already.
+However, this later version which uses a proper class, <strong>City</strong>, to hold both the name and population means <strong>Contains()</strong> won't work - see the code for details.</p>
+
+<p>There are several solutions which are explored in the code.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/itsligo">itsligo</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
