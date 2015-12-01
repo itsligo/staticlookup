@@ -1,0 +1,14 @@
+\\psf\Home\Documents\dev\vs\foop201\StaticLookup\StaticLookup\bin\Debug\StaticLookup.exe.config
+\\psf\Home\Documents\dev\vs\foop201\StaticLookup\StaticLookup\bin\Debug\StaticLookup.exe
+\\psf\Home\Documents\dev\vs\foop201\StaticLookup\StaticLookup\bin\Debug\StaticLookup.pdb
+\\psf\Home\Documents\dev\vs\foop201\StaticLookup\StaticLookup\obj\Debug\StaticLookup.csprojResolveAssemblyReference.cache
+\\psf\Home\Documents\dev\vs\foop201\StaticLookup\StaticLookup\obj\Debug\MainWindow.g.cs
+\\psf\Home\Documents\dev\vs\foop201\StaticLookup\StaticLookup\obj\Debug\App.g.cs
+\\psf\Home\Documents\dev\vs\foop201\StaticLookup\StaticLookup\obj\Debug\StaticLookup_MarkupCompile.cache
+\\psf\Home\Documents\dev\vs\foop201\StaticLookup\StaticLookup\obj\Debug\StaticLookup_MarkupCompile.lref
+\\psf\Home\Documents\dev\vs\foop201\StaticLookup\StaticLookup\obj\Debug\MainWindow.baml
+\\psf\Home\Documents\dev\vs\foop201\StaticLookup\StaticLookup\obj\Debug\StaticLookup.g.resources
+\\psf\Home\Documents\dev\vs\foop201\StaticLookup\StaticLookup\obj\Debug\StaticLookup.Properties.Resources.resources
+\\psf\Home\Documents\dev\vs\foop201\StaticLookup\StaticLookup\obj\Debug\StaticLookup.csproj.GenerateResource.Cache
+\\psf\Home\Documents\dev\vs\foop201\StaticLookup\StaticLookup\obj\Debug\StaticLookup.exe
+\\psf\Home\Documents\dev\vs\foop201\StaticLookup\StaticLookup\obj\Debug\StaticLookup.pdb

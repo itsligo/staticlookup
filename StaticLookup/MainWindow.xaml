@@ -1,0 +1,16 @@
+﻿<Window x:Class="StaticLookup.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StaticLookup"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <DockPanel Background="Azure">
+        <ListBox FontSize="20" DockPanel.Dock="Left" Name="lbxCities" MinWidth="200" Margin="10"></ListBox>
+        <StackPanel DockPanel.Dock="Right" Background="Aquamarine" Margin="20">
+            <TextBox Name="tbkCity" FontSize="22" Margin="10"></TextBox>
+            <Button Name="btnAddCity" Margin="10" FontFamily="Arial" FontSize="22" Click="btnAddCity_Click">Add City</Button>
+        </StackPanel>
+    </DockPanel>
+</Window>
